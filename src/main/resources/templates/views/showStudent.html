@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+<div class="container" style="text-align: center; width: 70%">
+    <div class="row" style="margin-top: 100px">
+        <div class="col-sm-8">
+            <table class="table table-striped">
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Image</td>
+                    <td>Class</td>
+                </tr>
+                <tr th:object="${newStudent}">
+                    <td th:text="${newStudent.id}"></td>
+                    <td th:text="${newStudent.name}"></td>
+                    <td th:text="${newStudent.age}"></td>
+                    <td width="100px">
+                        <img class="card-img-top" width="100px" height="160px" th:src="@{/images/{img}(img=${newStudent.getImage()})}" alt="student-avatar">
+                    </td>
+                    <td th:text="${newStudent.className}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

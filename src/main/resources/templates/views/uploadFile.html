@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Student</title>
+</head>
+<body>
+<div ></div>
+<div class="container" style="text-align: center">
+    <div class="row" style="width: 60%; margin-top: 50px">
+        <div class="col-sm-4">
+            <form th:action="@{/create}" th:object="${student}" method="post" enctype="multipart/form-data">
+                <table class="table table-striped">
+                    <tr>
+                        <td>Id</td>
+                        <td>
+                            <input type="text" required th:field="*{id}" placeholder="Enter id">
+                        </td>
+                    </tr><tr>
+                    <td>Name</td>
+                    <td>
+                        <input type="text" required th:field="*{name}" placeholder="Enter name">
+                    </td>
+                </tr><tr>
+                    <td>Age</td>
+                    <td>
+                        <input type="text" required th:field="*{age}" placeholder="Enter age">
+                    </td>
+                </tr><tr>
+                    <td>Class name</td>
+                    <td>
+                        <input type="text" required th:field="*{className}" placeholder="Enter class name">
+                    </td>
+                </tr><tr>
+                    <td>Avatar</td>
+                    <td>
+                        <input type="file" th:field="*{images}" placeholder="Choose avatar" multiple>
+<!--                        <input type="text" required th:field="*{image}" placeholder="Choose avatar">-->
+                    </td>
+                </table>
+
+                <input type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
